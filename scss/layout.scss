@@ -8,6 +8,7 @@ header {
   position: fixed;
   right: 20px;
   left: 20px;
+  z-index: 11;
   justify-content: center;
   height: 80px;
   //   border: 3px solid #009619;
@@ -40,14 +41,14 @@ header {
     }
   }
   .menu {
-    position: absolute;
     display: flex;
+    position: absolute;
+    right: 50px;
     justify-content: center;
     align-items: center;
     height: 80px;
     font-size: 18px;
     font-weight: 400;
-    right: 50px;
     .list {
       display: flex;
       align-items: center;
@@ -56,6 +57,74 @@ header {
         align-items: center;
         width: 100px;
         height: 80px;
+      }
+    }
+  }
+}
+// main-visual 영역
+.main-visual {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 1000px;
+
+  // ✅ Swiper 래퍼
+  .swiper {
+    width: 100%;
+    height: 100%;
+
+    // ✅ 슬라이드 이미지
+    .swiper-slide {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  // ✅ pagination-box (네비게이션 + 페이징 포함)
+  .pagination-box {
+    display: flex;
+    position: absolute;
+    bottom: 220px;
+    left: 300px;
+    z-index: 9;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    .nav {
+      display: flex;
+    }
+    // ✅ pagination (점 스타일) — 올바른 계층으로 이동
+    .pagination {
+      .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background: #fff;
+        opacity: 0.5;
+      }
+
+      .swiper-pagination-bullet-active {
+        width: 24px;
+        border-radius: 5px;
+        background: #fff;
+        opacity: 1;
+      }
+    }
+
+    // ✅ 네비게이션 버튼
+    .btn-prev,
+    .btn-next {
+      padding: 0 10px;
+      color: #fff;
+      font-size: 32px;
+      transition: opacity 0.3s;
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        opacity: 0.7;
       }
     }
   }

@@ -18,16 +18,19 @@
     />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu,arrow_back,arrow_forward"
     />
+    <!-- ✅ Swiper CSS 추가 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/layout.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <title>korea bio</title>
   </head>
   <body>
     <header class="header">
       <h1 class="logo">
-        <a href=""> <img src="../images/logo.png" alt="" /></a>
+        <a href=""> <img src="../images/logo.png" alt="로고" /></a>
       </h1>
       <nav class="gnb">
         <ul class="list">
@@ -44,13 +47,54 @@
         </ul>
       </div>
     </header>
-    <!-- 메인비쥬얼 -->
+
+    <!-- ✅ 메인비주얼: .swiper 래퍼 추가, 구조 정리 -->
     <div class="main-visual">
-      <div class="visual-box">
-        <div class="swiper-slide visual01"><img src="../images/visual1.jpg" alt="" /></div>
-        <div class="swiper-slide visual01"><img src="../images/visual2.jpg" alt="" /></div>
-        <div class="swiper-slide visual01"><img src="../images/visual3.jpg" alt="" /></div>
+      <!-- ✅ .swiper 컨테이너 추가 -->
+      <div class="swiper">
+        <div class="swiper-wrapper visual-list">
+          <div class="swiper-slide visual01">
+            <img src="../images/visual1.jpg" alt="비주얼1" />
+          </div>
+          <div class="swiper-slide visual01">
+            <img src="../images/visual2.jpg" alt="비주얼2" />
+          </div>
+          <div class="swiper-slide visual01">
+            <img src="../images/visual3.jpg" alt="비주얼3" />
+          </div>
+        </div>
+      </div>
+      <div class="pagination-box">
+        <div class="pagination"></div>
+        <div class="nav">
+          <span class="material-symbols-outlined btn-prev"> arrow_back </span>
+          <span class="material-symbols-outlined btn-next"> arrow_forward </span>
+        </div>
       </div>
     </div>
+
+    <!-- ✅ Swiper 초기화 코드 수정 -->
+    <script>
+      const productSlider = new Swiper(".main-visual .swiper", {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        speed: 1000,
+        loop: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".main-visual .pagination",
+          type: "bullets",
+          clickable: true,
+        },
+        navigation: {
+          // ✅ 올바른 셀렉터로 수정
+          nextEl: ".main-visual .pagination-box .btn-next",
+          prevEl: ".main-visual .pagination-box .btn-prev",
+        },
+      });
+    </script>
   </body>
 </html>
