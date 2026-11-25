@@ -67,6 +67,12 @@ header {
   position: relative;
   width: 100%;
   height: 1000px;
+   --swiper-pagination-bullet-width: 20px;
+  --swiper-pagination-bullet-height: 70px;
+  --swiper-pagination-bullet-horizontal-gap: 40px;   // ← 간격
+  --swiper-pagination-bullet-inactive-opacity: 0.5;
+  --swiper-pagination-bullet-inactive-color: #fff;
+  --swiper-pagination-color: #fff;
 
   // ✅ Swiper 래퍼
   .swiper {
@@ -100,7 +106,10 @@ header {
     .pagination {
       display: flex;
       align-items: center;
-      gap: 40px;
+        // 👇 이 변수들이 핵심 (기존 width/height/gap보다 우선 적용됨)
+      --swiper-pagination-bullet-size: 20px;
+      --swiper-pagination-bullet-horizontal-gap: 40px;   // ← 간격
+      --swiper-pagination-bullet-inactive-opacity: 0.5;
       .swiper-pagination-bullet {
         width: 33px !important;
         height: 33px !important;
