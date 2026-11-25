@@ -92,21 +92,26 @@ header {
     z-index: 9;
     justify-content: center;
     align-items: center;
-    gap: 16px;
+    gap: 30px;
     .nav {
       display: flex;
     }
     // ✅ pagination (점 스타일) — 올바른 계층으로 이동
     .pagination {
+      display: flex;
+      align-items: center;
+      gap: 40px;
       .swiper-pagination-bullet {
-        width: 10px;
-        height: 10px;
+        width: 33px !important;
+        height: 33px !important;
         background: #fff;
         opacity: 0.5;
+         margin: 0 !important;                      // ← Swiper 기본 여백 제거 (gap만 남기기 위해)
+    flex-shrink: 0;                 // ← active에서 넓어져도 안 찌그러지게
       }
 
       .swiper-pagination-bullet-active {
-        width: 24px;
+        width: 55px !important;
         border-radius: 5px;
         background: #fff;
         opacity: 1;
