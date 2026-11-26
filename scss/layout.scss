@@ -98,33 +98,34 @@ header {
     }
     // ✅ pagination (점 스타일) — 올바른 계층으로 이동
     .pagination {
+      display: flex;
+      gap: 20px;
       .swiper-pagination-bullet {
-        width: 10px;
-        height: 10px;
-        background: #fff;
-        opacity: 0.5;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #00e1ff;
       }
 
       .swiper-pagination-bullet-active {
-        width: 24px;
-        border-radius: 5px;
-        background: #fff;
-        opacity: 1;
+        width: 34px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
       }
     }
 
     // ✅ 네비게이션 버튼
     .btn-prev,
     .btn-next {
-      padding: 0 10px;
+      padding: 20px;
       color: #fff;
-      font-size: 32px;
+      font-size: 40px;
       transition: opacity 0.3s;
       cursor: pointer;
       user-select: none;
 
       &:hover {
         opacity: 0.7;
+        border: 2px solid #00e1ff;
       }
     }
   }
