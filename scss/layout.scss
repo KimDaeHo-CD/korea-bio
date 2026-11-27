@@ -72,7 +72,7 @@ header {
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: 1000px;
+  height: 100vh;
 
   // ✅ Swiper 래퍼
   .swiper {
@@ -83,7 +83,7 @@ header {
     .swiper-slide {
       img {
         width: 100%;
-        height: 98vh;
+        height: 100vh;
         object-fit: cover;
       }
     }
@@ -137,13 +137,10 @@ header {
   }
 }
 .section02 {
-  width: calc(100% - 200px);
-  margin: auto;
-  .title br + br {
-    margin-top: 80px; /* 두 개의 <br /> 사이에 마진 추가 */
-  }
+  width: calc(100% - 600px);
+  // margin-left: 300px;
+  margin: 200px 300px;
   .title {
-    margin: 90px;
     font-size: 40px;
     font-weight: 400;
     line-height: 1.5;
@@ -160,6 +157,56 @@ header {
     }
     .thic-txt {
       font-weight: 600;
+    }
+  }
+  .img-box {
+    display: flex;
+    .img-1 {
+      width: 700px;
+      height: 350px;
+      margin: 100px 0;
+      border-radius: 30px;
+    }
+    .img-2 {
+      position: relative;
+      bottom: 200px;
+      left: 140px;
+      width: 330px;
+      height: 413px;
+      border-radius: 30px;
+    }
+  }
+}
+
+.section03 {
+  display: flex;
+  position: relative;
+  margin: 200px;
+  background-image: url("../images/sec3_bg.jpg");
+  .notice {
+    text-align: center;
+    .info-box {
+      width: 600px;
+      height: 200px;
+      margin: 0 40px;
+      background-color: #ffffff;
+      // 클래스이름 숫자로 시작 ㄴㄴ 에러남
+      &.b1 {
+        border-radius: 19px 19px 0 0;
+      }
+      &.b2 {
+        border-radius: 0 0 19px 19px;
+      }
+    }
+  }
+  .cp-news {
+    text-align: center;
+    .info-box {
+      width: 600px;
+      height: 200px;
+      margin: 0 40px;
+      background-color: #ffffff;
+      border-radius: 19px;
     }
   }
 }

@@ -66,7 +66,7 @@ header .menu .list a {
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: 1000px;
+  height: 100vh;
 }
 .main-visual .swiper {
   width: 100%;
@@ -74,7 +74,7 @@ header .menu .list a {
 }
 .main-visual .swiper .swiper-slide img {
   width: 100%;
-  height: 98vh;
+  height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -123,14 +123,10 @@ header .menu .list a {
 }
 
 .section02 {
-  width: calc(100% - 200px);
-  margin: auto;
-}
-.section02 .title br + br {
-  margin-top: 80px; /* 두 개의 <br /> 사이에 마진 추가 */
+  width: calc(100% - 600px);
+  margin: 200px 300px;
 }
 .section02 .title {
-  margin: 90px;
   font-size: 40px;
   font-weight: 400;
   line-height: 1.5;
@@ -148,4 +144,53 @@ header .menu .list a {
 }
 .section02 .title .thic-txt {
   font-weight: 600;
+}
+.section02 .img-box {
+  display: flex;
+}
+.section02 .img-box .img-1 {
+  width: 700px;
+  height: 350px;
+  margin: 100px 0;
+  border-radius: 30px;
+}
+.section02 .img-box .img-2 {
+  position: relative;
+  bottom: 200px;
+  left: 140px;
+  width: 330px;
+  height: 413px;
+  border-radius: 30px;
+}
+
+.section03 {
+  display: flex;
+  position: relative;
+  margin: 200px;
+  background-image: url("../images/sec3_bg.jpg");
+}
+.section03 .notice {
+  text-align: center;
+}
+.section03 .notice .info-box {
+  width: 600px;
+  height: 200px;
+  margin: 0 40px;
+  background-color: #ffffff;
+}
+.section03 .notice .info-box.b1 {
+  border-radius: 19px 19px 0 0;
+}
+.section03 .notice .info-box.b2 {
+  border-radius: 0 0 19px 19px;
+}
+.section03 .cp-news {
+  text-align: center;
+}
+.section03 .cp-news .info-box {
+  width: 600px;
+  height: 200px;
+  margin: 0 40px;
+  background-color: #ffffff;
+  border-radius: 19px;
 }
